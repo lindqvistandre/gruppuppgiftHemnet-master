@@ -1,0 +1,368 @@
+﻿@model gruppuppgiftHemnet.Models.Listing
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div id="detailsImageGallery">
+    <div class="bild">
+        @if (Model != null && Model.Images.ElementAtOrDefault(0) != null)
+        {
+        <img id="expandedImg" src="@Model.Images.ElementAt(0).Image_url">
+        }
+        else
+        {
+            
+
+        }
+        
+
+    </div>
+
+    <!-- obs denna fungerar
+        
+
+
+        <div class="row">-->
+    @*Laddar en mini-bild per bild i image-listan*@
+    <!--@foreach (var item in Model.Images)
+         {
+             <div class="column">
+                 <img src=@item.Image_url alt="Nature" onclick="imageGalleryChange('@item.Image_url')" />
+
+             </div>
+
+         }
+
+     </div>
+
+
+    obs denna fungerar          -->
+    <!--<div class="row">-->
+    @*Laddar en mini-bild per bild i image-listan*@
+
+    <!--<div class="ny">
+        <img src="https://process.fasad.eu/rimage.php?url=https%3A%2F%2Fimages03.fasad.eu%2F577%2F400407%2F1442107%2Fhighres%2F13850315.jpg&i=1&m=strict&w=2000&h=1335&c=70&u=0"
+             alt="Nature" onclick="imageGalleryChange(this);" />
+        <img src="https://process.fasad.eu/rimage.php?url=https%3A%2F%2Fimages03.fasad.eu%2F577%2F400407%2F1442107%2Fhighres%2F13850315.jpg&i=1&m=strict&w=2000&h=1335&c=70&u=0"
+             alt="Nature" onclick="imageGalleryChange(this);" />
+        <img src="https://process.fasad.eu/rimage.php?url=https%3A%2F%2Fimages03.fasad.eu%2F577%2F400407%2F1442107%2Fhighres%2F13850315.jpg&i=1&m=strict&w=2000&h=1335&c=70&u=0"
+             alt="Nature" onclick="imageGalleryChange(this);" />
+
+    </div>-->
+
+@*<div class="property-gallery__action-button-container"><a rel="noopener noreferrer" class="gallery-action-button qa-all-images-link" href="https://connect-resolve.maklare.vitec.net/ImageList/M15423/OBJ15423_1731268379/Hemnet"><span class="property-gallery__button-content"><span class="property-gallery__button-label">16 bilder</span><i class="fa fa-external-link property-gallery__button-icon--right"></i></span></a></div>*@
+<div><a href="#anchor-name">Klicka för se flera bilder</a></div>
+</div>
+
+<div class="property-info__content">
+    <section class="property-info__data-container">
+        <div class="property-info__primary-container">
+            <div class="property-info__address-container">
+                <div class="property-address">
+
+                    <h1 class="h1">
+
+                        @Html.DisplayFor(model => model.Address)
+
+                    </h1>
+
+                    <div class="property-address__area-container">
+                        @Html.DisplayFor(model => model.Postal_Code)
+                        @Html.DisplayFor(model => model.Postal_Area)
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="property-info__price-container">
+                <p id="price_box" class="property-info__price qa-property-price">
+                    @(Model.Listing_Price.ToString("c"))
+                    @*@Html.DisplayFor(model => model.Listing_Price). kr*@
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- NÄSTA DIV OMRÅDE
+-->
+
+<div class="property-info__attributes-and-description">
+    <div class="property-attributes qa-property-attributes">
+        <div class="property-attributes-table">
+            <dl class="property-attributes-table__area">
+                <div class="property-attributes-table__row">
+                    <dt class="property-attributes-table__label">Bostadstyp</dt>
+                    <dd class="property-attributes-table__value">
+                        @Html.DisplayFor(model => model.Listing_Type)
+                    </dd>
+                </div>
+
+                <div class="property-attributes-table__row">
+                    <dt class="property-attributes-table__label">Upplåtelseform</dt>
+                    <dd class="property-attributes-table__value">@Html.DisplayFor(model => model.Form_Of_Lease)</dd>
+                </div>
+
+
+                <div class="property-attributes-table__row">
+                    <dt class="property-attributes-table__label">Antal rum</dt>
+                    <dd class="property-attributes-table__value">
+
+                        @Html.DisplayFor(model => model.Room_Count)
+                    </dd>
+                </div>
+
+                <div class="property-attributes-table__row qa-living-area-attribute">
+                    <dt class="property-attributes-table__label">Boarea</dt>
+                    <dd class="property-attributes-table__value"> @Html.DisplayFor(model => model.Floor_Area) m²
+                </div>
+
+                <div class="property-attributes-table__row qa-land-area-attribute">
+                    <dt class="property-attributes-table__label">Tomtarea</dt>
+                    <dd class="property-attributes-table__value">
+                        @Html.DisplayFor(model => model.Lot_Area)m²
+                    </dd>
+                </div>
+
+                <div class="property-attributes-table__row">
+                    <dt class="property-attributes-table__label">Byggår</dt>
+                    <dd class="property-attributes-table__value">@Html.DisplayFor(model => model.Year_Built)</dd>
+                </div>
+                <div class="property-attributes-table__row">
+                    <dt class="property-attributes-table__label">Visningsdatum</dt>
+                    <dd id="date_Box" class="property-attributes-table__value">@*@Html.DisplayFor(model => model.Tour_Date)*@ </dd>
+                </div>
+            </dl>
+
+
+            </dl>
+        </div>
+
+    </div>
+    <div class="property-description-container js-property-description-container qa-property-description-container"
+         data-listing-id="17445516">
+        <div class="property-description-container__labels"></div>
+        <div class="property-description js-property-description property-description--long property-description--expanded"
+             style="max-height: 100%">
+            <p>
+                @Html.DisplayFor(model => model.Description)
+            </p>
+
+
+
+        </div>
+    </div>
+    </div>
+    <div class="intresse">
+        <h3>Intresseanmälan:</h3>
+        <h4 id="subscriptionTack" style="display: none">Tack! Vi kontaktar er när det finns uppdateringar!</h4>
+        <form id="subscriptionForm" name="subscribeForm">
+            <label for="fname"> Förnamn</label><br />
+            <input type="text" id="fname" name="fname" value="" required placeholder="Firstname" /><br />
+            <label for="lname"> Efternamn</label><br />
+            <input type="text" id="lname" name="lname" value="" required placeholder="Lastname" /><br />
+            <label for="email"> Email</label><br />
+            <input type="email" id="email" name="email" value="" required placeholder="Email" /><br />
+            <label for="telnr"> Telefonnummer</label><br />
+            <input type="text" id="telnr" name="telnr" value="" required placeholder="Phonenumber" /><br />
+            <input type="submit" id="submitButton" name="submit" value="Skicka" /><p id="subscriptionError" style="display: none">Något gick fel... Var vänlig försök igen.</p>
+        </form>
+    </div>
+
+
+    <br />
+    <div class="karta">
+
+        <div id="map">
+
+
+        </div>
+        @*testar*@
+    </div> <br />
+           <a id="anchor-name"></a><br />
+        @foreach (var item in Model.Images)
+        {
+            <div class="bilderna">
+                <img src=@item.Image_url alt="details" onclick="window.open(this.src, '_blank');"/>
+
+            </div><br />
+
+        }
+
+
+@section scripts{ 
+
+    <script defer>
+    $(document).ready(function () {
+        initMap();
+        /*priceFormat();*/
+
+        dateFormat();
+
+        $("#subscriptionForm").submit(function (e) {
+            e.preventDefault();
+        });
+
+        document.getElementById("subscriptionForm").onsubmit = subscribePost;
+        /*alert("ready");*/
+        /*document.getElementById("clickMe").onsubmit = doFunction;*/
+    });
+
+
+            const initMap = () => {
+
+                var latParse = parseFloat('@Model.Latitude'.split(',')[0]);
+                console.log(latParse);
+                latStocholm = 59.334591;
+
+                var lngParse = parseFloat('@Model.Longitude'.split(',')[0]);
+                console.log(lngParse);
+                lngtStocholm = 18.0686;
+
+                //Behöver fixa ordentliga kordinater för objekten
+                const objLocation = { lat: 59.33459, lng: 18.0686 };
+                objLocation.lat = latParse;
+                objLocation.lng = lngParse;
+                let map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 10,
+                    center: objLocation,
+                });
+
+                let marker = new google.maps.Marker({
+                    position: objLocation,
+                    map: map,
+                    mapTypeControlOptions: {
+                        position: google.maps.ControlPosition.TOP_RIGHT,
+                    },
+                });
+        }
+
+
+
+
+        @*function priceFormat() {
+            var orgPrice = parseInt(@Model.Listing_Price);
+            orgPrice.toLocaleString();
+            document.getElementById("price_box").innerHTML = orgPrice.toLocaleString() + " SEK";
+
+        }*@
+
+        function dateFormat() {
+            var orgDate = new Date('@Model.Tour_Date');
+            console.log('@Model.Tour_Date');
+           /* orgDate.toLocaleString();*/
+            document.getElementById("date_Box").innerHTML = orgDate;
+
+        }
+
+
+
+
+    </script>
+
+        <script defer>
+            function imageGalleryChange(imgs) {
+                // Get the expanded image
+                expandImg = document.getElementById("expandedImg");
+                // Get the image text
+                // Use the same src in the expanded image as the image being clicked on from the grid
+                expandImg.src = imgs;
+                // Use the value of the alt attribute of the clickable image as text inside the expanded image
+                // Show the container element (hidden with CSS)
+                expandImg.parentElement.style.display = "block";
+
+            }
+        </script>
+
+
+        <script>
+
+
+
+
+
+
+
+
+        function subscribePost() {
+
+        var emailValue = document.getElementById('email').value;
+        var firstNameValue = document.getElementById('fname').value;
+        var lastNameValue = document.getElementById('lname').value;
+        var phoneValue = document.getElementById('telnr').value;
+        var listIdValue = '@Model.Listing_Id';
+
+            var apiUrl = 'https://realtyfirmapi2.azurewebsites.net/api/listings/subscribe'
+
+        //form encoded data
+            /*var dataType = 'application/json; charset=utf-8';*/
+            var data = {
+                Email: emailValue,
+                FirstName: firstNameValue,
+                LastName: lastNameValue,
+                PhoneNumber: phoneValue,
+                Listing_Id: listIdValue
+            };
+
+            console.log(data);
+            //dataTwo = dataOne.serialize();
+
+            
+
+
+        console.log('Subscribing...');
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+        url: apiUrl,
+        type: 'POST',
+        dataType: 'json',
+        /*contentType: dataType,*/
+        data: JSON.stringify(data),
+        success: function (result) {
+            console.log('Data received: ');
+            console.log(result);
+            $("#subscriptionForm").hide();
+            $("#subscriptionTack").show();
+            $("#subscriptionError").hide();
+                }, error: function (result) {
+            console.log('Error');
+            console.log(result);
+            $("#subscriptionError").show();
+                }
+        });
+
+        }
+
+
+        </script>
+
+
+
+
+        <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDciDvRcm_MEWh_2tElzu7qqLgswLMVxqU&callback=initMap&libraries=&v=weekly"></script>
+
+
+
+
+    
+        }
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

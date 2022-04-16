@@ -1,0 +1,217 @@
+﻿.body {
+    color: #333;
+    font-family: Open Sans, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.main {
+    max-width: 694px;
+    margin: 0 auto 100px;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 5px;
+}
+
+.bild {
+    position: relative;
+    margin: 0 auto;
+    max-width: 690px;
+    color: #888;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.div {
+    display: block;
+}
+
+.property-info__content {
+    margin-bottom: 8px;
+}
+
+.property-info__data-cointainer {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 12px 12px 8px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 16px;
+}
+
+.property-info__data-cointainer {
+    flex-direction: row;
+}
+
+.property-info__price-container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.property-info__price {
+    margin: 0;
+    font-size: 22px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.property-info__primary-container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+}
+
+.property-attributes {
+    margin-bottom: 0;
+    grid-area: attributes;
+}
+
+.property-info__attributes-and-description {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas:
+        "description attributes"
+        "button empty";
+    /*   margin: 0 16px 8px;*/
+    box-sizing: border-box;
+}
+
+.property-description-container {
+    margin-right: 32px;
+    flex: 3;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.property-description--expanded {
+    margin-bottom: 16px;
+    cursor: auto;
+}
+
+.property-description--long {
+    max-height: 8.7em;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s ease-in-out;
+}
+
+    .property-description--long:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+.property-attributes-table__value {
+    font-weight: 100;
+}
+
+dt {
+    display: block;
+}
+
+#map {
+    height: 400px;
+    width: 400px;
+}
+
+.karta {
+    margin: 5px;
+    padding: 5px;
+}
+/* TEST CSS FOR TAB GALLERY*/
+/* The grid: Four equal columns that floats next to each other */
+
+#detailsImageGallery {
+    /*    background-color: Green;*/
+}
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+    /* Style the images inside the grid */
+    .column img {
+        /*        opacity: 0.8;*/
+        cursor: pointer;
+    }
+
+        .column img:hover {
+            /*            opacity: 1;*/
+        }
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.bilderna {
+    margin: 5px;
+    /*    padding: 5px;*/
+}
+
+/*.ny {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}*/
+
+/* Style the images inside the grid */
+/*.ny img {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+
+        .ny img:hover {
+            opacity: 1;
+        }
+
+            .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}*/

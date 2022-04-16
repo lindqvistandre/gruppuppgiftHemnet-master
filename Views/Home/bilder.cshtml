@@ -1,0 +1,131 @@
+﻿@model gruppuppgiftHemnet.Models.Listing
+
+@{
+    ViewBag.Title = "Bilder";
+}
+
+
+<div class="bild">
+    <img src="https://bilder.hemnet.se/images/listing_card/18/15/18156eda75892d95d5cc56bc4787ac9c.jpg" />
+    <dt>
+    @foreach (var imageUrl in Model.Images)
+    {
+        <img src=@imageUrl.Image_url width="200" height="200" />
+    }
+    </dt>
+</div>
+
+
+@*<h2>Details</h2>
+
+    <div>
+        <h4>Listing</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @foreach (var imageUrl in Model.Images)
+                {
+                    <img src=@imageUrl.Image_url width="200" height="200" />
+                }
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Listing_Type)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Listing_Type)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Room_Count)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Room_Count)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Listing_Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Listing_Price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Year_Built)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Year_Built)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Tour_Date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Tour_Date)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Floor_Area)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Floor_Area)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Nonusable_Floor_Area)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nonusable_Floor_Area)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Lot_Area)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Lot_Area)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Form_Of_Lease)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Form_Of_Lease)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Broker_Id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Broker_Id)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+
+    </p>*@

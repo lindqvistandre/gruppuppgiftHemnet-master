@@ -1,0 +1,143 @@
+﻿.container {
+    text-align: center;
+    border: 10px solid rgb(255, 255, 255);
+    padding: 10px;
+}
+
+.container table {
+        border: 1px solid red;
+    }
+
+img {
+    /* max-width: 50%;
+  max-height: 50%; */
+    width: 100%;
+    height: auto;
+}
+
+.full {
+    background: red;
+    width: 100%;
+}
+
+.left {
+    width: 50%;
+    height: auto;
+    float: left;
+    background: blue;
+    height: 200px;
+}
+
+.right {
+    padding: 10px;
+    width: 50%;
+    background: green;
+    float: right;
+    height: 200px;
+}
+
+.full div {
+    box-sizing: border-box;
+}
+
+.row {
+/*    display: column;*/
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+.main {
+    max-width: 850px;
+    margin: 0 auto 100px;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 0px;
+}
+
+.th {
+    text-align: left;
+}
+
+.center {
+    margin: 5px;
+}
+
+.column {
+    display: flex;
+}
+
+a:hover {
+    color: blue;
+}
+
+.card {
+    display: flex;
+    /*    flex-direction: column;*/
+    padding: 15px;
+    cursor: pointer;
+    border: 1px solid #019ba9;
+}
+
+    .card:hover {
+  /*      border: 2px solid aquamarine;*/
+      /*  border-radius: 25px;*/
+        box-shadow: 1px 2px 1px 2px ;
+        /*        border-color: aquamarine;*/
+    }
+
+
+@media screen and (min-width: 1200px) {
+    .card {
+        flex-direction: row;
+    }
+}
+@media screen and (min-width: 750px) {
+    .containernav {
+    }
+}
+
+
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+    border-radius: 0px;
+}
+
+    .navbar a {
+        float: left;
+        /*  padding: 12px;*/
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+        padding-top: 15px;
+    }
+
+/*        .navbar a:hover {
+            background-color: #000;
+        }*/
+
+.active {
+   /* background-color: #4CAF50;*/              
+}
+
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}
+
+.nav {
+    margin-right: 1px;
+}
+/*.ny {
+    display: flex;
+    flex: 20%;
+}*/
+
+.sortering {
+    text-align: center;
+}

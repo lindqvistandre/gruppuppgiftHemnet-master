@@ -1,0 +1,103 @@
+﻿
+@model IEnumerable<gruppuppgiftHemnet.Models.Listing>
+@Styles.Render("~/Content/index.css")
+@{
+    ViewBag.Title = "Index";
+
+}
+
+
+<div class="main">
+
+
+
+    <div id="sortOptionBox" class="sortering">
+        <p>Sortera efter:</p>
+        @*@Html.ActionLink("Gatunamn", "Index", new { sortOption = ViewBag.AdressSortOrder })*@
+        @Html.ActionLink("Pris", "Index", new { sortOption = ViewBag.PriceSortOrder })
+        @Html.ActionLink("Antal Rum", "Index", new { sortOption = ViewBag.RoomSortOrder })
+        @Html.ActionLink("Area", "Index", new { sortOption = ViewBag.AreaSortOrder })
+    </div>
+
+
+
+    <div id="cardList">
+        @foreach (var item in Model)
+        {
+
+
+
+            <dl>
+
+                <div class="card" onclick="location.href='@Url.Action("Details", new { id = item.Listing_Id })'" target="_blank">
+
+                    <div class="column">
+
+
+
+                        @*<img src=@item.Images.ElementAt(0).Image_url width="200" height="200" />*@
+
+                        @if (item != null && item.Images.ElementAtOrDefault(0) != null)
+                        {
+                            <img src=@item.Images.ElementAtOrDefault(0).Image_url width="200" height="200" />
+                        }
+                        else
+                        {
+                    <img src="https://cdn.pixabay.com/photo/2015/07/08/10/29/appartment-building-835817_960_720.jpg" width="200" height="200" />
+
+                        }
+                    </div>
+                    <div class="column">
+
+                        <table class="center">
+                            <tr>
+
+                                <th class="th">@Html.DisplayFor(modelItem => item.Address)</th>
+
+                            </tr>
+                            <tr>
+
+                                <th class="th">@Html.DisplayFor(modelItem => item.Postal_Code) @Html.DisplayFor(modelItem => item.Postal_Area)</th>
+                            </tr>
+                            <tr>
+                                
+                                @*<th class="th" id="priceBox">Pris: @Html.DisplayFor(modelItem => item.Listing_Price) kr;</th>*@
+                                <th class="th" id="priceBox">Pris: @(item.Listing_Price.ToString("c"))</th>
+                            </tr>
+                            <tr>
+                                <th class="th">Antal rum: @Html.DisplayFor(modelItem => item.Room_Count)</th>
+
+                            </tr>
+                            <tr>
+                                <th class="th">Bostadsyta: @Html.DisplayFor(modelItem => item.Floor_Area) m²</th>
+
+                            </tr>
+                            @if (item.Lot_Area == 0)
+                            {
+
+                            }
+                            else
+                            {
+                                <tr><th class="th">Tomt: @Html.DisplayFor(modelItem => item.Lot_Area) m² </th></tr>
+
+                            }
+
+
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+            </dl>
+        }
+    </div>
+
+    
+    </div>
+

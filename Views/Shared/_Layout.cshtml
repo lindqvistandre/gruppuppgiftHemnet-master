@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<meta name="google-signin-client_id" content="828901240438-85bv3b859m10n0nunsb628f7evs98lqv.apps.googleusercontent.com">*@
+    @*<script src="https://apis.google.com/js/platform.js" async defer></script>*@
+
+
+    <title>Tenmeh</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/index.css")
+    @Styles.Render("~/Content/details.css")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    
+    <link rel="icon"
+          type="image/png"
+          href="~/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+</head>
+<body>
+
+    @*SCRAPPED Google frontend aut SCRAPPED*@
+    @*Obs! änra in div classen ("g-signin2") om du vill behålla default google look på login knappen.*@
+    @*<div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" onclick="signOut();">Sign out</a>*@
+
+
+    <div class="navbar">
+
+        @if (ViewBag.Title == "Index")
+        {
+        <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Tenmeh - Hus & Hem</a>
+
+        }
+        else
+        {
+            <a href="/"><i class="fa fa-fw fa-home"></i> Tenmeh - Hus & Hem</a>
+        }
+
+
+
+
+
+    </div>
+
+    <div class="main">
+
+        @RenderBody()
+
+
+
+        <hr />
+
+    </div>
+    <div class="fot">
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Grupp 5</p>
+        </footer>
+    </div>
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+            if (typeof jQuery == 'undefined') {
+                var e = document.createElement('script');
+                e.src = '@Url.Content("~/Scripts/jquery-1.7.1.js")';
+                e.type = 'text/javascript';
+                document.getElementsByTagName("head")[0].appendChild(e);
+
+            }
+    </script>
+
+
+
+</body>
+</html>
